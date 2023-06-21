@@ -14,11 +14,12 @@
             <option value="3">Dermatologia</option>
             <option value="4">Oftalmologia</option>
         </select>
-        <button class="btn btn-primary">Agregar cita</button>
+        <button class="btn btn-primary" @click="$emit('clickButton')">Agregar cita</button>
     </form>
     </div>
 </template>
-<script></script>
+<script>
+</script>
 <style scoped>
     .container-form{
         display: flex;
