@@ -10,20 +10,21 @@
                 </tr>
             </thead>
             <tbody>
-                <slot></slot>
+                <tr v-for="(date, index) in datesList" :key="index">
+                    <td>{{ date.name }}</td>
+                    <td>{{ date.email }}</td>
+                    <td>{{ date.date }}</td>
+                    <td>{{ date.area }}</td>
+                </tr>
             </tbody>
         </table>
     </div>
 </template>
 <script>
-    export default{
-        props:{
-            name: String,
-            email: String,
-            date: String,
-            area: String
-
-        }
+export default {
+    props: {
+        datesList: Array
     }
+}
 </script>
 <style></style>

@@ -2,15 +2,9 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <div class="container-challenge">
     <FormVue
-    @clickButton="addDates"
+    @add-info="addDates"
     ></FormVue>
-  <TableView>
-    <tr v-for="(date, index) in dates" :key="index">
-      <td>{{ date.name }}</td>
-      <td>{{ date.email }}</td>
-      <td>{{ date.date }}</td>
-      <td>{{ date.area }}</td>
-    </tr>
+  <TableView :datesList="dates">
   </TableView>
   </div>
 </template>
@@ -27,15 +21,12 @@ export default {
   },
   data() {
     return {
-      currentData:{},
-      dates:[
-        {name: "david", date:"1/1/1", email:"a@cl.com", area:"prueba"}
-      ]
+      dates:[]
     }
   },
   methods:{
-    addDates(){
-      
+    addDates(newDate){
+      this.dates.push(newDate)
     }
   }
 }
